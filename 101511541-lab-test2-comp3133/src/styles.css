@@ -1,0 +1,63 @@
+:root {
+  --hp-dark: #0a0a0f;
+  --hp-dark-2: #12121a;
+  --hp-dark-3: #1a1a2e;
+  --hp-gold: #c9a84c;
+  --hp-gold-light: #f0d080;
+  --hp-crimson: #8b0000;
+  --hp-parchment: #f5e6c8;
+  --hp-parchment-dark: #d4b896;
+
+  --gryffindor: #740001;
+  --gryffindor-accent: #d3a625;
+  --slytherin: #1a472a;
+  --slytherin-accent: #aaaaaa;
+  --hufflepuff: #ecb939;
+  --hufflepuff-accent: #372e29;
+  --ravenclaw: #0e1a40;
+  --ravenclaw-accent: #946b2d;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  background-color: var(--hp-dark);
+  color: var(--hp-parchment);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 16px;
+}
+
+/* Angular Material overrides */
+.mat-mdc-card {
+  background-color: var(--hp-dark-3) !important;
+  color: var(--hp-parchment) !important;
+}
+
+.mat-toolbar {
+  background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%) !important;
+  border-bottom: 1px solid var(--hp-gold) !important;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--hp-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hp-gold);
+  border-radius: 3px;
+}
+
+a {
+  color: var(--hp-gold);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--hp-gold-light);
+}

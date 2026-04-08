@@ -1,0 +1,24 @@
+<mat-toolbar class="app-toolbar">
+  <div class="toolbar-inner">
+    <div class="logo" routerLink="/">
+      <span class="logo-icon">⚡</span>
+      <span class="logo-text">Wizarding World</span>
+    </div>
+    <nav class="nav-links">
+      <button mat-button routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">
+        <mat-icon>people</mat-icon> All Characters
+      </button>
+      <button mat-button routerLink="/filter" routerLinkActive="active-link">
+        <mat-icon>filter_list</mat-icon> Filter by House
+      </button>
+    </nav>
+  </div>
+</mat-toolbar>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>101511541 &mdash; COMP3133 Lab Test 2 &mdash; Harry Potter Theme</p>
+</footer>

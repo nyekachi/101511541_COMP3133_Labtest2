@@ -1,0 +1,76 @@
+.app-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  font-family: 'Cinzel', serif !important;
+}
+
+.toolbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #c9a84c;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-links button {
+  font-family: 'Cinzel', serif !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 1px;
+  color: #f5e6c8 !important;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-links button mat-icon {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+
+.active-link {
+  color: #c9a84c !important;
+  border-bottom: 2px solid #c9a84c;
+}
+
+.app-main {
+  min-height: calc(100vh - 130px);
+  padding: 24px 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.app-footer {
+  text-align: center;
+  padding: 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: #6b5a3e;
+  border-top: 1px solid #2a2a3e;
+  letter-spacing: 1px;
+}

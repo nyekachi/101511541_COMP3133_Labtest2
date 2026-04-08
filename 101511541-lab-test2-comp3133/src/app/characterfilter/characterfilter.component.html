@@ -1,0 +1,75 @@
+<div class="page-header">
+  <h1 class="page-title">Filter by House</h1>
+  <p class="page-subtitle">Choose a Hogwarts house to see its members</p>
+
+  <mat-form-field appearance="outline" class="house-select-field">
+    <mat-label>Select a House</mat-label>
+    <mat-select [formControl]="houseControl">
+      @for (house of houses; track house) {
+        <mat-option [value]="house">
+          {{ getHouseEmoji(house) }} {{ house }}
+        </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div class="house-banner" [ngClass]="getHouseTheme(selectedHouse())">
+  <span class="house-emoji">{{ getHouseEmoji(selectedHouse()) }}</span>
+  <span class="house-name">{{ selectedHouse() }}</span>
+</div>
+
+@if (loading()) {
+  <div class="loading-container">
+    <mat-spinner diameter="60" color="accent"></mat-spinner>
+    <p class="loading-text">Summoning {{ selectedHouse() }} members…</p>
+  </div>
+}
+
+@if (error()) {
+  <div class="error-container">
+    <mat-icon class="error-icon">error_outline</mat-icon>
+    <p>{{ error() }}</p>
+    <button mat-raised-button (click)="loadByHouse(selectedHouse())" class="retry-btn">
+      <mat-icon>refresh</mat-icon> Retry
+    </button>
+  </div>
+}
+
+@if (!loading() && !error()) {
+  <p class="result-count">
+    <strong>{{ characters().length }}</strong> members found in {{ selectedHouse() }}
+  </p>
+
+  <div class="character-grid">
+    @for (character of characters(); track trackById($index, character)) {
+      <mat-card class="character-card" [ngClass]="getHouseTheme(selectedHouse())" (click)="viewDetails(character.id)" matTooltip="View {{ character.name }}'s details">
+        <div class="card-image-wrap">
+          @if (character.image) {
+            <img [src]="character.image" [alt]="character.name" class="character-img" loading="lazy">
+          } @else {
+            <div class="no-image">
+              <mat-icon>person</mat-icon>
+            </div>
+          }
+          <div class="card-overlay"></div>
+        </div>
+
+        <mat-card-content class="card-content">
+          <h3 class="character-name">{{ character.name }}</h3>
+          @if (character.actor) {
+            <p class="actor-name">Actor: {{ character.actor }}</p>
+          }
+          <span class="house-badge" [ngClass]="'badge-' + selectedHouse().toLowerCase()">
+            {{ getHouseEmoji(selectedHouse()) }} {{ selectedHouse() }}
+          </span>
+        </mat-card-content>
+      </mat-card>
+    } @empty {
+      <div class="empty-state">
+        <mat-icon>search_off</mat-icon>
+        <p>No characters found for {{ selectedHouse() }}.</p>
+      </div>
+    }
+  </div>
+}

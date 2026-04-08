@@ -1,0 +1,142 @@
+<div class="back-btn-wrap">
+  <button mat-button (click)="goBack()" class="back-btn">
+    <mat-icon>arrow_back</mat-icon> Back to Characters
+  </button>
+</div>
+
+@if (loading()) {
+  <div class="loading-container">
+    <mat-spinner diameter="60" color="accent"></mat-spinner>
+    <p class="loading-text">Retrieving character details…</p>
+  </div>
+}
+
+@if (error()) {
+  <div class="error-container">
+    <mat-icon class="error-icon">error_outline</mat-icon>
+    <p>{{ error() }}</p>
+    <button mat-raised-button (click)="goBack()" class="retry-btn">
+      <mat-icon>arrow_back</mat-icon> Go Back
+    </button>
+  </div>
+}
+
+@if (!loading() && !error() && character()) {
+  <div class="details-container" [ngClass]="getHouseClass(character()!.house)">
+
+    <div class="details-card">
+      <!-- Image Panel -->
+      <div class="image-panel">
+        @if (character()!.image) {
+          <img [src]="character()!.image" [alt]="character()!.name" class="character-img">
+        } @else {
+          <div class="no-image">
+            <mat-icon>person</mat-icon>
+          </div>
+        }
+        <div class="image-glow" [ngClass]="getHouseClass(character()!.house)"></div>
+      </div>
+
+      <!-- Info Panel -->
+      <div class="info-panel">
+        <div class="character-header">
+          <h1 class="character-name">{{ character()!.name }}</h1>
+          @if (character()!.house) {
+            <span class="house-badge" [ngClass]="'badge-' + character()!.house.toLowerCase()">
+              {{ getHouseEmoji(character()!.house) }} {{ character()!.house }}
+            </span>
+          } @else {
+            <span class="house-badge badge-none">✨ No House</span>
+          }
+        </div>
+
+        <mat-divider class="divider"></mat-divider>
+
+        <div class="info-grid">
+
+          <!-- Basic Info -->
+          <div class="info-section">
+            <h3 class="section-title">Identity</h3>
+            <div class="info-row">
+              <span class="info-label">Species</span>
+              <span class="info-value">{{ character()!.species || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Gender</span>
+              <span class="info-value">{{ character()!.gender || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Ancestry</span>
+              <span class="info-value">{{ character()!.ancestry || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Wizard</span>
+              <span class="info-value">
+                @if (character()!.wizard) {
+                  <span class="badge-yes">Yes</span>
+                } @else {
+                  <span class="badge-no">No</span>
+                }
+              </span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Alive</span>
+              <span class="info-value">
+                @if (character()!.alive) {
+                  <span class="badge-yes">Yes</span>
+                } @else {
+                  <span class="badge-no">No</span>
+                }
+              </span>
+            </div>
+          </div>
+
+          <!-- Wand Info -->
+          <div class="info-section">
+            <h3 class="section-title">🪄 Wand</h3>
+            <div class="info-row">
+              <span class="info-label">Wood</span>
+              <span class="info-value">{{ character()!.wand?.wood || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Core</span>
+              <span class="info-value">{{ character()!.wand?.core || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Length</span>
+              <span class="info-value">
+                @if (character()!.wand?.length) {
+                  {{ character()!.wand.length }}"
+                } @else {
+                  —
+                }
+              </span>
+            </div>
+          </div>
+
+          <!-- Actor & Patronus -->
+          <div class="info-section">
+            <h3 class="section-title">🎬 Portrayal</h3>
+            <div class="info-row">
+              <span class="info-label">Actor</span>
+              <span class="info-value actor">{{ character()!.actor || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Patronus</span>
+              <span class="info-value">{{ character()!.patronus || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Eye Colour</span>
+              <span class="info-value">{{ character()!.eyeColour || '—' }}</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Hair Colour</span>
+              <span class="info-value">{{ character()!.hairColour || '—' }}</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+}
