@@ -96,16 +96,16 @@
             <h3 class="section-title">🪄 Wand</h3>
             <div class="info-row">
               <span class="info-label">Wood</span>
-              <span class="info-value">{{ character()!.wand?.wood || '—' }}</span>
+              <span class="info-value">{{ character()!.wand.wood || '—' }}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Core</span>
-              <span class="info-value">{{ character()!.wand?.core || '—' }}</span>
+              <span class="info-value">{{ character()!.wand.core || '—' }}</span>
             </div>
             <div class="info-row">
               <span class="info-label">Length</span>
               <span class="info-value">
-                @if (character()!.wand?.length) {
+                @if (character()!.wand.length) {
                   {{ character()!.wand.length }}"
                 } @else {
                   —
