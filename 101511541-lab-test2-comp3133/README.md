@@ -23,16 +23,26 @@ An Angular 17 application that fetches and displays Harry Potter character data 
 
 ## Screenshots
 
-> *(Add screenshots here after running the app)*
+
 
 ### Character List
-![Character List](screenshots/character-list.png)
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 08 PM" src="https://github.com/user-attachments/assets/6ea80416-4946-4bdb-a676-ce070a27850a" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 08 PM" src="https://github.com/user-attachments/assets/6ea80416-4946-4bdb-a676-ce070a27850a" />
+
 
 ### Filter by House
-![Filter by House](screenshots/filter.png)
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 19 PM" src="https://github.com/user-attachments/assets/9927775f-2fa4-4ac6-ae55-b81c1c0ad561" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 19 PM" src="https://github.com/user-attachments/assets/9927775f-2fa4-4ac6-ae55-b81c1c0ad561" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 19 PM" src="https://github.com/user-attachments/assets/2d13420e-c9b1-493b-9a8d-54f0d59cc565" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 19 PM" src="https://github.com/user-attachments/assets/2d13420e-c9b1-493b-9a8d-54f0d59cc565" />
+
 
 ### Character Details
-![Character Details](screenshots/details.png)
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 36 PM" src="https://github.com/user-attachments/assets/7b266e91-963f-4087-8fed-e7a65751523d" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 36 PM" src="https://github.com/user-attachments/assets/7b266e91-963f-4087-8fed-e7a65751523d" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 36 PM" src="https://github.com/user-attachments/assets/f7d60efd-3358-4cab-948f-ce472f557efb" />
+<img width="1512" height="982" alt="Screenshot 2026-04-08 at 3 40 36 PM" src="https://github.com/user-attachments/assets/f7d60efd-3358-4cab-948f-ce472f557efb" />
+
 
 ---
 
