@@ -80,7 +80,7 @@ ng build
 
 ## Deployment
 
-Live app: [Add your Vercel/Render link here]
+Live app(VERCEL LINK) : https://101511541-comp-3133-labtest2-4ahd-a3bq4jswa.vercel.app/
 
 ---
 
